@@ -35,7 +35,7 @@
 - object  
   `'{' ( (key (':' | '=')? value) | ',' | ';' )* '}'`
 - tagged union  
-  `'(' word ')' value`
+  `'(' key ')' value`
 - value  
   `object | array | <tagged union> | string | word | date | number | bool | null`
 - escape  
