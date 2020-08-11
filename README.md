@@ -29,13 +29,13 @@
 - date  
   `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
 - key  
-  `string | word`
+  `string | word | number | bool | null`
 - array  
   `'[' (value | ',' | ';')* ']'`
 - object  
   `'{' ( (key (':' | '=')? value) | ',' | ';' )* '}'`
 - tagged union  
-  `'(' word ')' value`
+  `'(' key ')' value`
 - value  
   `object | array | <tagged union> | string | word | date | number | bool | null`
 - escape  
