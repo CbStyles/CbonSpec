@@ -24,10 +24,11 @@
     ```
 - word  
   ```regexp
-  [^\[\]\{\}\(\)'":=,;\s]+
+  [^\[\]\{\}\(\)'":=,;\s#]+
   ```
 - date  
-  `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
+  - `<ISO 8601>`
+  - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
 - key  
   `string | word | number | bool | null`
 - array  
