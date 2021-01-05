@@ -27,7 +27,7 @@
   [^\[\]\{\}\(\)'":=,;\s#]+
   ```
 - date  
-  - `<ISO 8601>`
+  - `<ISO 8601 Extended Full>`
   - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
 - key  
   `string | word | number | bool | null | date`
