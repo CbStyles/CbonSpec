@@ -27,7 +27,10 @@
   [^\[\]\{\}\(\)'":=,;\s#]+
   ```
 - date  
-  - `<ISO 8601 Extended Date and Time>`
+  - `<ISO 8601 Extended Date and Time>` [YYYY-MM-DDTHH:mm:ss.sssZ](https://tc39.github.io/ecma262/#sec-date-time-string-format)  
+    ```regexp
+    (([+-]?\d{6})|(\d{4}))-((0[1-9])|(1[012]))-((0[1-9])([12]\d)|(3[[01]))T(([01]\d)|(2[0-4])):[0-5]\d:[0-5]\d\.\d{3}(Z|([+-](([01]\d)|(2[0-4])):[0-5]\d))
+    ```  
   - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
 - key  
   `string | word | number | bool | null | date`
