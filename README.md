@@ -34,7 +34,7 @@
     ```  
   - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
 - key  
-  `string | word | number | bool | null | date`
+  `string | word`
 - array  
   `'[' (value | ',' | ';')* ']'`
 - object  
