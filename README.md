@@ -33,6 +33,10 @@
     T( ([01]\d) | (2[0-4]) ) : [0-5]\d : [0-5]\d \. \d{3} ( Z | ([+-]( ([01]\d) | (2[0-4]) ) : [0-5]\d))
     ```  
   - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
+- uuid
+  ```regexp
+  [\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}
+  ```
 - key  
   `string | word`
 - array  
@@ -42,7 +46,7 @@
 - tagged union  
   `'(' key ')' value`
 - value  
-  `object | array | <tagged union> | string | word | date | number | bool | null`
+  `object | array | <tagged union> | string | word | date | uuid | number | bool | null`
 - escape  
   `'\' <the escape>`
   - `'\'` -> `'\'`
