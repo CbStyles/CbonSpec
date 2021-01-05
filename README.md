@@ -29,8 +29,7 @@
 - date  
   - `<ISO 8601 Extended Date and Time>` [YYYY-MM-DDTHH:mm:ss.sssZ](https://tc39.github.io/ecma262/#sec-date-time-string-format)  
     ```regex
-    <year> - ( 0[1-9] | 1[012] ) - ( 0[1-9] | [12]\d | 3[01] )
-    T( [01]\d | 2[0-4] ) : [0-5]\d : [0-5]\d \. \d{3} ( Z | [+-]( [01]\d | 2[0-4] ) : [0-5]\d )
+    <year> - \d{2} - \d{2} T \d{2} : \d{2} : \d{2} \. \d{3} ( Z | [+-] \d{2} : \d{2} )
     ```  
   - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`  
   - year
