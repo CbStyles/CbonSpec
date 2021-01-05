@@ -33,9 +33,9 @@
     T( [01]\d | 2[0-4] ) : [0-5]\d : [0-5]\d \. \d{3} ( Z | [+-]( [01]\d | 2[0-4] ) : [0-5]\d )
     ```  
   - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`  
-  - Year
+  - year
     - .Net `\d{4}`
-    - EcmaScript `( [+-]? \d{6} ) | \d{4}`
+    - ECMAScript `( [+-]? \d{6} ) | \d{4}`
 - uuid
   ```regex
   [\da-fA-F]{8} - [\da-fA-F]{4} - [\da-fA-F]{4} - [\da-fA-F]{4} - [\da-fA-F]{12}
