@@ -14,28 +14,31 @@
 - string  
   `("'" (<escape>|<anychar>) "'") | ('"' (<escape>|<anychar>) '"')`
 - number  
-  ```regexp
-    ( \d+[\d_]*  (\.(\d+[\d_]*)?)?  ([eE][-+]?\d+[\d_]*)?   )
-  | ( \.\d+[\d_]*  ([eE][-+]?\d+[\d_]*)?                    )
+  ```regex
+    | [+-]? \d+[\d_]* ( '.' ( _*\d+[\d_]* )? )? ( [eE][-+]? _*\d+[\d_]* )?
+    | [+-]? \.\d+[\d_]* ( [eE][-+]? _*\d+[\d_]* )?
   ```
   - hex  
-    ```regexp
-    0x[\da-fA-F]+[\da-fA-F_]*
+    ```regex
+    '0' 'x' _* [\da-fA-F]+ [\da-fA-F_]*
     ```
 - word  
-  ```regexp
+  ```regex
   [^\[\]\{\}\(\)'":=,;\s#]+
   ```
 - date  
   - `<ISO 8601 Extended Date and Time>` [YYYY-MM-DDTHH:mm:ss.sssZ](https://tc39.github.io/ecma262/#sec-date-time-string-format)  
-    ```regexp
-    ( ([+-]?\d{6}) | (\d{4}) ) - ( (0[1-9]) | (1[012]) ) - ( (0[1-9]) | ([12]\d) | (3[[01]) )
-    T( ([01]\d) | (2[0-4]) ) : [0-5]\d : [0-5]\d \. \d{3} ( Z | ([+-]( ([01]\d) | (2[0-4]) ) : [0-5]\d))
+    ```regex
+    <year> - ( 0[1-9] | 1[012] ) - ( 0[1-9] | [12]\d | 3[01] )
+    T( [01]\d | 2[0-4] ) : [0-5]\d : [0-5]\d \. \d{3} ( Z | [+-]( [01]\d | 2[0-4] ) : [0-5]\d )
     ```  
-  - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`
+  - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`  
+  - Year
+    - .Net `\d{4}`
+    - EcmaScript `( [+-]? \d{6} ) | \d{4}`
 - uuid
-  ```regexp
-  [\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}
+  ```regex
+  [\da-fA-F]{8} - [\da-fA-F]{4} - [\da-fA-F]{4} - [\da-fA-F]{4} - [\da-fA-F]{12}
   ```
 - key  
   `string | word`
