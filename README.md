@@ -20,7 +20,7 @@
   ```
   - hex  
     ```regex
-    '0' 'x' _* [\da-fA-F]+ [\da-fA-F_]*
+    '0' [xX] _* [\da-fA-F]+ [\da-fA-F_]*
     ```
 - word  
   ```regex
