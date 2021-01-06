@@ -29,7 +29,7 @@
 - date  
   - `<ISO 8601 Extended Date and Time>` [YYYY-MM-DDTHH:mm:ss.sssZ](https://tc39.github.io/ecma262/#sec-date-time-string-format)  
     ```regex
-    <year> - \d{2} - \d{2} T \d{2} : \d{2} : \d{2} \. \d{3} ( Z | [+-] \d{2} : \d{2} )
+    <year> '-' \d{2} '-' \d{2} 'T' \d{2} ':' \d{2} ':' \d{2} '.' \d{3} ( 'Z' | [+-] \d{2} ':' \d{2} )
     ```  
   - Typed deserialization only `("'" <ISO 8601> "'") | ('"' <ISO 8601> '"")`  
   - year
@@ -37,7 +37,7 @@
     - ECMAScript `( [+-]? \d{6} ) | \d{4}`
 - uuid
   ```regex
-  [\da-fA-F]{8} - [\da-fA-F]{4} - [\da-fA-F]{4} - [\da-fA-F]{4} - [\da-fA-F]{12}
+  [\da-fA-F]{8} '-' [\da-fA-F]{4} '-' [\da-fA-F]{4} '-' [\da-fA-F]{4} '-' [\da-fA-F]{12}
   ```
 - key  
   `string | word`
