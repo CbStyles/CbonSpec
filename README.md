@@ -22,6 +22,8 @@
     ```regex
     '0' [xX] '_'* [\da-fA-F]+ [\da-fA-F_]*
     ```
+  - NaN `NaN`  
+  - Infinity `Infinity` `-Infinity`  
 - word  
   ```regex
   [^\[\]\{\}\(\)'":=,;\s#]+
